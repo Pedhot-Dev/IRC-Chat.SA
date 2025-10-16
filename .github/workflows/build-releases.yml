@@ -31,9 +31,18 @@ jobs:
         echo "Artifacts ready:"
         dir artifacts
 
-    - name: Upload to Releases
+    - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
+        tag_name: ${{ github.ref_name }}
+        name: Release ${{ github.ref_name }}
         files: artifacts/*
+        body: |
+          Automated build from GitHub Actions
+          - Build date: ${{ date }}
+          - Commit: ${{ github.sha }}
+          - Triggered by: ${{ github.event_name }}
+        draft: false
+        prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
