@@ -1,0 +1,6 @@
+[submodule "external/sampapi"]
+	path = external/sampapi
+	url = https://github.com/Pedhot-Dev/SAMP-API/
+[submodule "external/mini"]
+	path = external/mini
+	url = https://github.com/metayeti/mINI
