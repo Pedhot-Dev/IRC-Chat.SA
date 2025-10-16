@@ -9,7 +9,9 @@ on:
 jobs:
   build-and-release:
     runs-on: windows-latest
-    
+    # Set permissions for the GITHUB_TOKEN
+    permissions:
+      contents: write
     steps:
     - name: Checkout repository with submodules
       uses: actions/checkout@v4
